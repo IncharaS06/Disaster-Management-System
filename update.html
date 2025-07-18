@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster News</title>
+</head>
+
+<body>
+    <h2>Disaster Updates</h2>
+    <ul id="grants-list"></ul>
+
+    <script>
+        fetch("http://127.0.0.1:8000/grants.json")  // Ensure this URL is correct
+            .then(response => response.json())
+            .then(data => {
+                let list = document.getElementById("grants-list");
+                list.innerHTML = "";  // Clear previous content if any
+
+                data.forEach(grant => {
+                    let li = document.createElement("li");
+                    li.innerHTML = `<strong>${grant.title}:</strong> <a href="${grant.link}" target="_blank">${grant.link}</a>`;
+                    list.appendChild(li);
+                });
+            })
+            .catch(error => console.error("Error loading grants:", error));
+    </script>
+</body>
+
+</html>

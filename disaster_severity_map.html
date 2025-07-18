@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c1b437c0732828c2e370fcc8e9a01a79 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_c1b437c0732828c2e370fcc8e9a01a79" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c1b437c0732828c2e370fcc8e9a01a79 = L.map(
+                "map_c1b437c0732828c2e370fcc8e9a01a79",
+                {
+                    center: [22.3511, 78.6677],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_75661c786fb26ed1b052ae8d24c4a42f = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_75661c786fb26ed1b052ae8d24c4a42f.addTo(map_c1b437c0732828c2e370fcc8e9a01a79);
+        
+    
+            var marker_cluster_47521074211fdaa4bf651904608fa523 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_498bbce2da6b617262e2ddb7f4284a62 = L.circleMarker(
+                [15.9129, 79.74],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.006, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_47521074211fdaa4bf651904608fa523);
+        
+    
+        var popup_19901f87fc543e42421d5fc25151a398 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8d805121add808eee1e082878c3c515d = $(`<div id="html_8d805121add808eee1e082878c3c515d" style="width: 100.0%; height: 100.0%;">Andhra Pradesh<br>Risk Level: Green<br>Reasons: Low Risk<br>Weather: clear sky<br>Temperature: 21.21°C<br>Wind Speed: 1.06 km/h<br>Humidity: 69%</div>`)[0];
+                popup_19901f87fc543e42421d5fc25151a398.setContent(html_8d805121add808eee1e082878c3c515d);
+            
+        
+
+        circle_marker_498bbce2da6b617262e2ddb7f4284a62.bindPopup(popup_19901f87fc543e42421d5fc25151a398)
+        ;
+
+        
+    
+    
+            var circle_marker_2b90212a942bbb145266a4a3a26a1b34 = L.circleMarker(
+                [27.1004, 93.6167],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.409000000000001, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_47521074211fdaa4bf651904608fa523);
+        
+    
+        var popup_3f24b69c778971f0b34a935d1730019c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_59f1200c12fdb230825f880b6e189728 = $(`<div id="html_59f1200c12fdb230825f880b6e189728" style="width: 100.0%; height: 100.0%;">Arunachal Pradesh<br>Risk Level: Green<br>Reasons: Low Risk<br>Weather: scattered clouds<br>Temperature: 12.98°C<br>Wind Speed: 2.09 km/h<br>Humidity: 62%</div>`)[0];
+                popup_3f24b69c778971f0b34a935d1730019c.setContent(html_59f1200c12fdb230825f880b6e189728);
+            
+        
+
+        circle_marker_2b90212a942bbb145266a4a3a26a1b34.bindPopup(popup_3f24b69c778971f0b34a935d1730019c)
+        ;
+
+        
+    
+    
+            var circle_marker_c39ddb3faf9879b6211592c1e488be3c = L.circleMarker(
+                [26.2006, 92.9376],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.826, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_47521074211fdaa4bf651904608fa523);
+        
+    
+        var popup_3c5b5c8e1e8c2fe61e98255f1653191b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5456b170a27ac37d695e530660abaaea = $(`<div id="html_5456b170a27ac37d695e530660abaaea" style="width: 100.0%; height: 100.0%;">Assam<br>Risk Level: Green<br>Reasons: Low Risk<br>Weather: clear sky<br>Temperature: 12.33°C<br>Wind Speed: 1.26 km/h<br>Humidity: 57%</div>`)[0];
+                popup_3c5b5c8e1e8c2fe61e98255f1653191b.setContent(html_5456b170a27ac37d695e530660abaaea);
+            
+        
+
+        circle_marker_c39ddb3faf9879b6211592c1e488be3c.bindPopup(popup_3c5b5c8e1e8c2fe61e98255f1653191b)
+        ;
+
+        
+    
+    
+            var circle_marker_d05ee7ef4c4f2976d40e535e7288f7ef = L.circleMarker(
+                [25.0961, 85.3131],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.8920000000000003, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_47521074211fdaa4bf651904608fa523);
+        
+    
+        var popup_7d1dc5ef770eb8ab62615fc21acb09eb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4e6258d7fbd691319e71eb22a5fce42f = $(`<div id="html_4e6258d7fbd691319e71eb22a5fce42f" style="width: 100.0%; height: 100.0%;">Bihar<br>Risk Level: Green<br>Reasons: Low Risk<br>Weather: clear sky<br>Temperature: 14.87°C<br>Wind Speed: 0.92 km/h<br>Humidity: 38%</div>`)[0];
+                popup_7d1dc5ef770eb8ab62615fc21acb09eb.setContent(html_4e6258d7fbd691319e71eb22a5fce42f);
+            
+        
+
+        circle_marker_d05ee7ef4c4f2976d40e535e7288f7ef.bindPopup(popup_7d1dc5ef770eb8ab62615fc21acb09eb)
+        ;
+
+        
+    
+    
+            var circle_marker_dbff9460fa5601a0f8065e486687454d = L.circleMarker(
+                [21.2787, 81.8661],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.556, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_47521074211fdaa4bf651904608fa523);
+        
+    
+        var popup_1d1243c4ba85bf90f5a81a27f88ad31c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d4643278348234b3f1c7bc94ee830894 = $(`<div id="html_d4643278348234b3f1c7bc94ee830894" style="width: 100.0%; height: 100.0%;">Chhattisgarh<br>Risk Level: Green<br>Reasons: Low Risk<br>Weather: clear sky<br>Temperature: 21.28°C<br>Wind Speed: 2.56 km/h<br>Humidity: 23%</div>`)[0];
+                popup_1d1243c4ba85bf90f5a81a27f88ad31c.setContent(html_d4643278348234b3f1c7bc94ee830894);
+            
+        
+
+        circle_marker_dbff9460fa5601a0f8065e486687454d.bindPopup(popup_1d1243c4ba85bf90f5a81a27f88ad31c)
+        ;
+
+        
+    
+    
+            var circle_marker_5057207712cc61bab4aea1c50b483713 = L.circleMarker(
+                [15.2993, 74.124],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.245, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_47521074211fdaa4bf651904608fa523);
+        
+    
+        var popup_2dd3ef92660a5936b21fcb7773df8ab4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_11a2204b3c12f1095f2840241e41bfbc = $(`<div id="html_11a2204b3c12f1095f2840241e41bfbc" style="width: 100.0%; height: 100.0%;">Goa<br>Risk Level: Green<br>Reasons: Low Risk<br>Weather: clear sky<br>Temperature: 20.13°C<br>Wind Speed: 1.45 km/h<br>Humidity: 71%</div>`)[0];
+                popup_2dd3ef92660a5936b21fcb7773df8ab4.setContent(html_11a2204b3c12f1095f2840241e41bfbc);
+            
+        
+
+        circle_marker_5057207712cc61bab4aea1c50b483713.bindPopup(popup_2dd3ef92660a5936b21fcb7773df8ab4)
+        ;
+
+        
+    
+    
+            var circle_marker_0c66e28d03a104b79b80b487bc50470b = L.circleMarker(
+                [22.2587, 71.1924],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.515, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_47521074211fdaa4bf651904608fa523);
+        
+    
+        var popup_81d9ffa2c03086e417576eaaf5e936ad = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0a70e78d9cc41af042da46860d803756 = $(`<div id="html_0a70e78d9cc41af042da46860d803756" style="width: 100.0%; height: 100.0%;">Gujarat<br>Risk Level: Green<br>Reasons: Low Risk<br>Weather: clear sky<br>Temperature: 21.62°C<br>Wind Speed: 5.15 km/h<br>Humidity: 50%</div>`)[0];
+                popup_81d9ffa2c03086e417576eaaf5e936ad.setContent(html_0a70e78d9cc41af042da46860d803756);
+            
+        
+
+        circle_marker_0c66e28d03a104b79b80b487bc50470b.bindPopup(popup_81d9ffa2c03086e417576eaaf5e936ad)
+        ;
+
+        
+    
+    
+            var circle_marker_7daa731f9a1a7a4ef6995f90ac939c73 = L.circleMarker(
+                [29.0588, 76.0856],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.005, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_47521074211fdaa4bf651904608fa523);
+        
+    
+        var popup_abdc30148cc5bd075edbad8a08b76738 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_79300d1331d36ae7b2aecf80a9dacb10 = $(`<div id="html_79300d1331d36ae7b2aecf80a9dacb10" style="width: 100.0%; height: 100.0%;">Haryana<br>Risk Level: Green<br>Reasons: Low Risk<br>Weather: scattered clouds<br>Temperature: 16.27°C<br>Wind Speed: 2.05 km/h<br>Humidity: 38%</div>`)[0];
+                popup_abdc30148cc5bd075edbad8a08b76738.setContent(html_79300d1331d36ae7b2aecf80a9dacb10);
+            
+        
+
+        circle_marker_7daa731f9a1a7a4ef6995f90ac939c73.bindPopup(popup_abdc30148cc5bd075edbad8a08b76738)
+        ;
+
+        
+    
+    
+            var circle_marker_80323892a71714a0bad3b6a4e29c480b = L.circleMarker(
+                [31.1048, 77.1734],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5520000000000005, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_47521074211fdaa4bf651904608fa523);
+        
+    
+        var popup_72116186de012b6785fb9410ffb4e61c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7e5052613dc45940367c16019e26fc93 = $(`<div id="html_7e5052613dc45940367c16019e26fc93" style="width: 100.0%; height: 100.0%;">Himachal Pradesh<br>Risk Level: Green<br>Reasons: Low Risk<br>Weather: overcast clouds<br>Temperature: 5.95°C<br>Wind Speed: 2.52 km/h<br>Humidity: 53%</div>`)[0];
+                popup_72116186de012b6785fb9410ffb4e61c.setContent(html_7e5052613dc45940367c16019e26fc93);
+            
+        
+
+        circle_marker_80323892a71714a0bad3b6a4e29c480b.bindPopup(popup_72116186de012b6785fb9410ffb4e61c)
+        ;
+
+        
+    
+    
+            var circle_marker_add00470735ad58e4712bc6b0703a3e5 = L.circleMarker(
+                [23.6102, 85.2799],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.995, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_47521074211fdaa4bf651904608fa523);
+        
+    
+        var popup_1ac6d0d6a94419d3dc370cd67e785d53 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a71aa5860ab346dc611b3a3c9bd48331 = $(`<div id="html_a71aa5860ab346dc611b3a3c9bd48331" style="width: 100.0%; height: 100.0%;">Jharkhand<br>Risk Level: Green<br>Reasons: Low Risk<br>Weather: clear sky<br>Temperature: 17.5°C<br>Wind Speed: 0.95 km/h<br>Humidity: 29%</div>`)[0];
+                popup_1ac6d0d6a94419d3dc370cd67e785d53.setContent(html_a71aa5860ab346dc611b3a3c9bd48331);
+            
+        
+
+        circle_marker_add00470735ad58e4712bc6b0703a3e5.bindPopup(popup_1ac6d0d6a94419d3dc370cd67e785d53)
+        ;
+
+        
+    
+    
+            var circle_marker_f79a5ec20c9b3bbf5fa4fdded0935aa6 = L.circleMarker(
+                [15.3173, 75.7139],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.538, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_47521074211fdaa4bf651904608fa523);
+        
+    
+        var popup_a2738607678eb448ab18cfd54e79ba51 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b05694c2ce684b29f270df2e8e97424d = $(`<div id="html_b05694c2ce684b29f270df2e8e97424d" style="width: 100.0%; height: 100.0%;">Karnataka<br>Risk Level: Green<br>Reasons: Low Risk<br>Weather: clear sky<br>Temperature: 22.86°C<br>Wind Speed: 1.38 km/h<br>Humidity: 24%</div>`)[0];
+                popup_a2738607678eb448ab18cfd54e79ba51.setContent(html_b05694c2ce684b29f270df2e8e97424d);
+            
+        
+
+        circle_marker_f79a5ec20c9b3bbf5fa4fdded0935aa6.bindPopup(popup_a2738607678eb448ab18cfd54e79ba51)
+        ;
+
+        
+    
+    
+            var circle_marker_04906e94d62d9e45d915ed388f34fc36 = L.circleMarker(
+                [10.8505, 76.2711],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.549, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_47521074211fdaa4bf651904608fa523);
+        
+    
+        var popup_7c8dd85ef1d5fa64e959bbd229b155dd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_869af5189bec8db24d65aabc3ee69f5d = $(`<div id="html_869af5189bec8db24d65aabc3ee69f5d" style="width: 100.0%; height: 100.0%;">Kerala<br>Risk Level: Yellow<br>Reasons: Flood Risk<br>Weather: scattered clouds<br>Temperature: 22.35°C<br>Wind Speed: 0.49 km/h<br>Humidity: 95%</div>`)[0];
+                popup_7c8dd85ef1d5fa64e959bbd229b155dd.setContent(html_869af5189bec8db24d65aabc3ee69f5d);
+            
+        
+
+        circle_marker_04906e94d62d9e45d915ed388f34fc36.bindPopup(popup_7c8dd85ef1d5fa64e959bbd229b155dd)
+        ;
+
+        
+    
+    
+            var circle_marker_cf2c5fc8558271d4105c388ca735d498 = L.circleMarker(
+                [23.4733, 77.947],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.2369999999999997, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_47521074211fdaa4bf651904608fa523);
+        
+    
+        var popup_8c565455f37e592d93b57cedfb3ad0c2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_45bb9d905297876e9d5fc80b61e92d6f = $(`<div id="html_45bb9d905297876e9d5fc80b61e92d6f" style="width: 100.0%; height: 100.0%;">Madhya Pradesh<br>Risk Level: Green<br>Reasons: Low Risk<br>Weather: clear sky<br>Temperature: 19.75°C<br>Wind Speed: 2.37 km/h<br>Humidity: 30%</div>`)[0];
+                popup_8c565455f37e592d93b57cedfb3ad0c2.setContent(html_45bb9d905297876e9d5fc80b61e92d6f);
+            
+        
+
+        circle_marker_cf2c5fc8558271d4105c388ca735d498.bindPopup(popup_8c565455f37e592d93b57cedfb3ad0c2)
+        ;
+
+        
+    
+    
+            var circle_marker_284c2f3ee8cae8e7ea852b741e7bf8ff = L.circleMarker(
+                [19.7515, 75.7139],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.4059999999999997, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_47521074211fdaa4bf651904608fa523);
+        
+    
+        var popup_c629933ae70dd864a84bbce433fafaf2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0947438d8fcab73103ee99b721dae8bf = $(`<div id="html_0947438d8fcab73103ee99b721dae8bf" style="width: 100.0%; height: 100.0%;">Maharashtra<br>Risk Level: Green<br>Reasons: Low Risk<br>Weather: clear sky<br>Temperature: 23.27°C<br>Wind Speed: 2.06 km/h<br>Humidity: 22%</div>`)[0];
+                popup_c629933ae70dd864a84bbce433fafaf2.setContent(html_0947438d8fcab73103ee99b721dae8bf);
+            
+        
+
+        circle_marker_284c2f3ee8cae8e7ea852b741e7bf8ff.bindPopup(popup_c629933ae70dd864a84bbce433fafaf2)
+        ;
+
+        
+    
+    
+            var circle_marker_03372b94235a0eb3fe468d24590639e6 = L.circleMarker(
+                [24.6637, 93.9063],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.512, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_47521074211fdaa4bf651904608fa523);
+        
+    
+        var popup_33f80678ca9a925516cbb1fc2696a52b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_adecbc1ec87a7a916c80cbb046843a38 = $(`<div id="html_adecbc1ec87a7a916c80cbb046843a38" style="width: 100.0%; height: 100.0%;">Manipur<br>Risk Level: Green<br>Reasons: Low Risk<br>Weather: clear sky<br>Temperature: 7.76°C<br>Wind Speed: 1.12 km/h<br>Humidity: 44%</div>`)[0];
+                popup_33f80678ca9a925516cbb1fc2696a52b.setContent(html_adecbc1ec87a7a916c80cbb046843a38);
+            
+        
+
+        circle_marker_03372b94235a0eb3fe468d24590639e6.bindPopup(popup_33f80678ca9a925516cbb1fc2696a52b)
+        ;
+
+        
+    
+    
+            var circle_marker_0e8efae186bc6b7f16d8109ae5d28158 = L.circleMarker(
+                [25.467, 91.3662],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.247999999999999, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_47521074211fdaa4bf651904608fa523);
+        
+    
+        var popup_62f5f11cc597221f568e04b99f58e5d7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9b7741d33d4c8e8da02c8ed91ecbe3c0 = $(`<div id="html_9b7741d33d4c8e8da02c8ed91ecbe3c0" style="width: 100.0%; height: 100.0%;">Meghalaya<br>Risk Level: Green<br>Reasons: Low Risk<br>Weather: clear sky<br>Temperature: 7.14°C<br>Wind Speed: 1.48 km/h<br>Humidity: 41%</div>`)[0];
+                popup_62f5f11cc597221f568e04b99f58e5d7.setContent(html_9b7741d33d4c8e8da02c8ed91ecbe3c0);
+            
+        
+
+        circle_marker_0e8efae186bc6b7f16d8109ae5d28158.bindPopup(popup_62f5f11cc597221f568e04b99f58e5d7)
+        ;
+
+        
+    
+    
+            var circle_marker_b8d260dce98c2f6ba344dde8961d4a2b = L.circleMarker(
+                [23.1645, 92.9376],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.243, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_47521074211fdaa4bf651904608fa523);
+        
+    
+        var popup_d6b0cdd14f79ae6a69d6be13d3bd1a0d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6de3b19eee4d97fda906f0a07588aca5 = $(`<div id="html_6de3b19eee4d97fda906f0a07588aca5" style="width: 100.0%; height: 100.0%;">Mizoram<br>Risk Level: Green<br>Reasons: Low Risk<br>Weather: clear sky<br>Temperature: 11.17°C<br>Wind Speed: 1.43 km/h<br>Humidity: 51%</div>`)[0];
+                popup_d6b0cdd14f79ae6a69d6be13d3bd1a0d.setContent(html_6de3b19eee4d97fda906f0a07588aca5);
+            
+        
+
+        circle_marker_b8d260dce98c2f6ba344dde8961d4a2b.bindPopup(popup_d6b0cdd14f79ae6a69d6be13d3bd1a0d)
+        ;
+
+        
+    
+    
+            var circle_marker_aadfd6df0e3999d594e08a23e4c8aa49 = L.circleMarker(
+                [26.1584, 94.5624],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.379, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_47521074211fdaa4bf651904608fa523);
+        
+    
+        var popup_28a6fc64ee09c063e8b61c69ec62f1d9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d3474740015b2c4745f226f951d2ae5d = $(`<div id="html_d3474740015b2c4745f226f951d2ae5d" style="width: 100.0%; height: 100.0%;">Nagaland<br>Risk Level: Green<br>Reasons: Low Risk<br>Weather: scattered clouds<br>Temperature: 7.08°C<br>Wind Speed: 1.79 km/h<br>Humidity: 62%</div>`)[0];
+                popup_28a6fc64ee09c063e8b61c69ec62f1d9.setContent(html_d3474740015b2c4745f226f951d2ae5d);
+            
+        
+
+        circle_marker_aadfd6df0e3999d594e08a23e4c8aa49.bindPopup(popup_28a6fc64ee09c063e8b61c69ec62f1d9)
+        ;
+
+        
+    
+    
+            var circle_marker_e558758e86d947983a4b343d6c28696a = L.circleMarker(
+                [20.9517, 85.0985],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.075, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_47521074211fdaa4bf651904608fa523);
+        
+    
+        var popup_8aa0c3079fcc0b366f1f1a77e87b479e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c84e87bec77a25fe8f12ea31e1b8e4e9 = $(`<div id="html_c84e87bec77a25fe8f12ea31e1b8e4e9" style="width: 100.0%; height: 100.0%;">Odisha<br>Risk Level: Green<br>Reasons: Low Risk<br>Weather: clear sky<br>Temperature: 16.28°C<br>Wind Speed: 0.75 km/h<br>Humidity: 50%</div>`)[0];
+                popup_8aa0c3079fcc0b366f1f1a77e87b479e.setContent(html_c84e87bec77a25fe8f12ea31e1b8e4e9);
+            
+        
+
+        circle_marker_e558758e86d947983a4b343d6c28696a.bindPopup(popup_8aa0c3079fcc0b366f1f1a77e87b479e)
+        ;
+
+        
+    
+    
+            var circle_marker_5d4f8115fa9275102a219c474e80e4a6 = L.circleMarker(
+                [31.1471, 75.3412],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.9479999999999995, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_47521074211fdaa4bf651904608fa523);
+        
+    
+        var popup_d04da774553628c6936556de2f104e21 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3e282b4d0b44f8a3c5f84227f94887e9 = $(`<div id="html_3e282b4d0b44f8a3c5f84227f94887e9" style="width: 100.0%; height: 100.0%;">Punjab<br>Risk Level: Green<br>Reasons: Low Risk<br>Weather: overcast clouds<br>Temperature: 14.39°C<br>Wind Speed: 1.48 km/h<br>Humidity: 38%</div>`)[0];
+                popup_d04da774553628c6936556de2f104e21.setContent(html_3e282b4d0b44f8a3c5f84227f94887e9);
+            
+        
+
+        circle_marker_5d4f8115fa9275102a219c474e80e4a6.bindPopup(popup_d04da774553628c6936556de2f104e21)
+        ;
+
+        
+    
+    
+            var circle_marker_5f29cdf51c0f13a6e1cc127d5da84e98 = L.circleMarker(
+                [27.0238, 74.2179],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.526, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_47521074211fdaa4bf651904608fa523);
+        
+    
+        var popup_18d512544f0211c0d0264572c315e3f0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_51d51e65ea575e6c9de8fa5657af2319 = $(`<div id="html_51d51e65ea575e6c9de8fa5657af2319" style="width: 100.0%; height: 100.0%;">Rajasthan<br>Risk Level: Green<br>Reasons: Low Risk<br>Weather: broken clouds<br>Temperature: 19.09°C<br>Wind Speed: 3.26 km/h<br>Humidity: 32%</div>`)[0];
+                popup_18d512544f0211c0d0264572c315e3f0.setContent(html_51d51e65ea575e6c9de8fa5657af2319);
+            
+        
+
+        circle_marker_5f29cdf51c0f13a6e1cc127d5da84e98.bindPopup(popup_18d512544f0211c0d0264572c315e3f0)
+        ;
+
+        
+    
+    
+            var circle_marker_9e4bc21dae1138901987c296cefd8308 = L.circleMarker(
+                [27.533, 88.5122],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.61, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_47521074211fdaa4bf651904608fa523);
+        
+    
+        var popup_2a187548b99eec79f2add6a36ed47255 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_92580547c4462054deca435602dd56d0 = $(`<div id="html_92580547c4462054deca435602dd56d0" style="width: 100.0%; height: 100.0%;">Sikkim<br>Risk Level: Red<br>Reasons: Flood Risk, Extreme Weather<br>Weather: overcast clouds<br>Temperature: 2.86°C<br>Wind Speed: 2.1 km/h<br>Humidity: 84%</div>`)[0];
+                popup_2a187548b99eec79f2add6a36ed47255.setContent(html_92580547c4462054deca435602dd56d0);
+            
+        
+
+        circle_marker_9e4bc21dae1138901987c296cefd8308.bindPopup(popup_2a187548b99eec79f2add6a36ed47255)
+        ;
+
+        
+    
+    
+            var circle_marker_f0a822d8c0e0a55fb20371cecb73f0a3 = L.circleMarker(
+                [11.1271, 78.6569],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.2090000000000005, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_47521074211fdaa4bf651904608fa523);
+        
+    
+        var popup_ef9cbcfb114d10f5d93a872a2df7c43d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_85739c393cc3b580ee43d0fecf973eac = $(`<div id="html_85739c393cc3b580ee43d0fecf973eac" style="width: 100.0%; height: 100.0%;">Tamil Nadu<br>Risk Level: Green<br>Reasons: Low Risk<br>Weather: few clouds<br>Temperature: 20.92°C<br>Wind Speed: 2.09 km/h<br>Humidity: 70%</div>`)[0];
+                popup_ef9cbcfb114d10f5d93a872a2df7c43d.setContent(html_85739c393cc3b580ee43d0fecf973eac);
+            
+        
+
+        circle_marker_f0a822d8c0e0a55fb20371cecb73f0a3.bindPopup(popup_ef9cbcfb114d10f5d93a872a2df7c43d)
+        ;
+
+        
+    
+    
+            var circle_marker_fb473299042be8ba9525ef5fdb2799e7 = L.circleMarker(
+                [17.1232, 79.2089],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.535, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_47521074211fdaa4bf651904608fa523);
+        
+    
+        var popup_eda54d934565a0534913894bca019667 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3e25b139d49fbf3b6952cc32ba2a25d4 = $(`<div id="html_3e25b139d49fbf3b6952cc32ba2a25d4" style="width: 100.0%; height: 100.0%;">Telangana<br>Risk Level: Green<br>Reasons: Low Risk<br>Weather: clear sky<br>Temperature: 21.62°C<br>Wind Speed: 1.35 km/h<br>Humidity: 24%</div>`)[0];
+                popup_eda54d934565a0534913894bca019667.setContent(html_3e25b139d49fbf3b6952cc32ba2a25d4);
+            
+        
+
+        circle_marker_fb473299042be8ba9525ef5fdb2799e7.bindPopup(popup_eda54d934565a0534913894bca019667)
+        ;
+
+        
+    
+    
+            var circle_marker_e2b44dd8f39c1be1f8ae21783e62c707 = L.circleMarker(
+                [23.9408, 91.9882],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.1979999999999995, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_47521074211fdaa4bf651904608fa523);
+        
+    
+        var popup_ac57492200b23d3a671f832733e0fc3c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_59b09807afc80ab02a6a49fa334e2c72 = $(`<div id="html_59b09807afc80ab02a6a49fa334e2c72" style="width: 100.0%; height: 100.0%;">Tripura<br>Risk Level: Green<br>Reasons: Low Risk<br>Weather: clear sky<br>Temperature: 13.57°C<br>Wind Speed: 0.98 km/h<br>Humidity: 41%</div>`)[0];
+                popup_ac57492200b23d3a671f832733e0fc3c.setContent(html_59b09807afc80ab02a6a49fa334e2c72);
+            
+        
+
+        circle_marker_e2b44dd8f39c1be1f8ae21783e62c707.bindPopup(popup_ac57492200b23d3a671f832733e0fc3c)
+        ;
+
+        
+    
+    
+            var circle_marker_597487396cd1fea57f461bf99e1606ef = L.circleMarker(
+                [26.8467, 80.9462],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.7, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_47521074211fdaa4bf651904608fa523);
+        
+    
+        var popup_eb7519ee4bd51d124f1588b7a242e15f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_90f969f5c4693ee80479dda5030cf6e2 = $(`<div id="html_90f969f5c4693ee80479dda5030cf6e2" style="width: 100.0%; height: 100.0%;">Uttar Pradesh<br>Risk Level: Green<br>Reasons: Low Risk<br>Weather: mist<br>Temperature: 15.05°C<br>Wind Speed: 0 km/h<br>Humidity: 77%</div>`)[0];
+                popup_eb7519ee4bd51d124f1588b7a242e15f.setContent(html_90f969f5c4693ee80479dda5030cf6e2);
+            
+        
+
+        circle_marker_597487396cd1fea57f461bf99e1606ef.bindPopup(popup_eb7519ee4bd51d124f1588b7a242e15f)
+        ;
+
+        
+    
+    
+            var circle_marker_8e03ddb833073a4f36f33a4be74c37e6 = L.circleMarker(
+                [30.0668, 79.0193],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.758, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_47521074211fdaa4bf651904608fa523);
+        
+    
+        var popup_cfe51ba1dbc6d1558fdc0fa848a5acd0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8bf20e1ed12410b3de5fdf2fe801542f = $(`<div id="html_8bf20e1ed12410b3de5fdf2fe801542f" style="width: 100.0%; height: 100.0%;">Uttarakhand<br>Risk Level: Yellow<br>Reasons: Extreme Weather<br>Weather: scattered clouds<br>Temperature: 3.37°C<br>Wind Speed: 1.58 km/h<br>Humidity: 56%</div>`)[0];
+                popup_cfe51ba1dbc6d1558fdc0fa848a5acd0.setContent(html_8bf20e1ed12410b3de5fdf2fe801542f);
+            
+        
+
+        circle_marker_8e03ddb833073a4f36f33a4be74c37e6.bindPopup(popup_cfe51ba1dbc6d1558fdc0fa848a5acd0)
+        ;
+
+        
+    
+    
+            var circle_marker_e53e0d55a9e799f62183c1f956f64a82 = L.circleMarker(
+                [22.9868, 87.855],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.563000000000001, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_47521074211fdaa4bf651904608fa523);
+        
+    
+        var popup_e9aa0d8e93dfbba4ac9be4818790bb3c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_801b3b21789cb0862f22b3a667a640e5 = $(`<div id="html_801b3b21789cb0862f22b3a667a640e5" style="width: 100.0%; height: 100.0%;">West Bengal<br>Risk Level: Green<br>Reasons: Low Risk<br>Weather: clear sky<br>Temperature: 17.47°C<br>Wind Speed: 2.63 km/h<br>Humidity: 53%</div>`)[0];
+                popup_e9aa0d8e93dfbba4ac9be4818790bb3c.setContent(html_801b3b21789cb0862f22b3a667a640e5);
+            
+        
+
+        circle_marker_e53e0d55a9e799f62183c1f956f64a82.bindPopup(popup_e9aa0d8e93dfbba4ac9be4818790bb3c)
+        ;
+
+        
+    
+    
+            marker_cluster_47521074211fdaa4bf651904608fa523.addTo(map_c1b437c0732828c2e370fcc8e9a01a79);
+        
+</script>
+</html>

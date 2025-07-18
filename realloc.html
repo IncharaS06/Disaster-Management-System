@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shortest Route Finder</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #map {
+            height: 500px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .input-container {
+            margin: 10px 0;
+        }
+
+        input,
+        button {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        #distance-output {
+            font-size: 18px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Find Shortest Route Between Two Locations</h2>
+
+    <div class="input-container">
+        <input type="text" id="location1" placeholder="Enter first location">
+        <input type="text" id="location2" placeholder="Enter second location">
+        <button onclick="findRoute()">Find Route</button>
+    </div>
+
+    <div id="map"></div>
+    <div id="distance-output">Distance: -</div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        let map = L.map('map').setView([20.5937, 78.9629], 5); // Default: India
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        let routeLayer;
+
+        async function findRoute() {
+            let loc1 = document.getElementById("location1").value.trim();
+            let loc2 = document.getElementById("location2").value.trim();
+
+            if (!loc1 || !loc2) {
+                alert("Please enter both locations!");
+                return;
+            }
+
+            try {
+                const coords1 = await geocodeLocation(loc1);
+                const coords2 = await geocodeLocation(loc2);
+
+                if (!coords1 || !coords2) {
+                    alert("Invalid location(s). Try again with more details (e.g., 'Virajpet, Karnataka').");
+                    return;
+                }
+
+                getRoute(coords1, coords2);
+            } catch (error) {
+                alert("Error fetching locations. Please try again.");
+            }
+        }
+
+        async function geocodeLocation(location) {
+            let url = `https://nominatim.openstreetmap.org/search?format=json&countrycodes=IN&q=${encodeURIComponent(location)}`;
+            let coords = await fetchCoordinates(url);
+
+            if (!coords) {
+                url = `https://geocode.maps.co/search?q=${encodeURIComponent(location)}, India&format=json`;
+                coords = await fetchCoordinates(url);
+            }
+
+            if (!coords) {
+                const apiKey = "1ce312acfa774b5e9b76b8735b88612b"; // Replace with actual API key
+                url = `https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(location)}, India&key=${apiKey}`;
+                coords = await fetchCoordinatesOpenCage(url);
+            }
+
+            return coords;
+        }
+
+        async function fetchCoordinates(url) {
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                if (!data.length) return null;
+                return [data[0].lat, data[0].lon]; // [latitude, longitude]
+            } catch {
+                return null;
+            }
+        }
+
+        async function fetchCoordinatesOpenCage(url) {
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                if (!data.results.length) return null;
+                return [data.results[0].geometry.lat, data.results[0].geometry.lng];
+            } catch {
+                return null;
+            }
+        }
+
+        async function getRoute([lat1, lon1], [lat2, lon2]) {
+            // Try normal driving route first
+            let url = `https://router.project-osrm.org/route/v1/driving/${lon1},${lat1};${lon2},${lat2}?overview=full&geometries=geojson`;
+
+            let response = await fetch(url);
+            let data = await response.json();
+
+            if (!data.routes || data.routes.length === 0) {
+                // If no route found, try alternative transport (including ferry)
+                url = `https://router.project-osrm.org/route/v1/walking/${lon1},${lat1};${lon2},${lat2}?overview=full&geometries=geojson`;
+                response = await fetch(url);
+                data = await response.json();
+
+                if (!data.routes || data.routes.length === 0) {
+                    alert("No route found even with alternative transport. Try again.");
+                    return;
+                }
+            }
+
+            const route = data.routes[0];
+            const routeCoords = route.geometry.coordinates.map(coord => [coord[1], coord[0]]);
+            const distanceKm = (route.distance / 1000).toFixed(2); // Convert meters to km
+
+            if (routeLayer) {
+                map.removeLayer(routeLayer);
+            }
+
+            routeLayer = L.polyline(routeCoords, { color: 'blue', weight: 5 }).addTo(map);
+            map.fitBounds(routeLayer.getBounds());
+
+            // Display the distance properly
+            document.getElementById("distance-output").innerText = `Distance: ${distanceKm} km`;
+        }
+    </script>
+
+</body>
+
+</html>

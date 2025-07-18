@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earthquake Prediction</title>
+</head>
+<body>
+    <h1>Earthquake Risk Prediction</h1>
+    <form id="earthquakeForm">
+        <label for="place">Enter the place:</label>
+        <input type="text" id="place" required>
+        <button type="submit">Get Prediction</button>
+    </form>
+
+    <div id="result">
+        <p id="prediction"></p>
+        <p id="riskLevel"></p>
+    </div>
+
+    <script>
+        document.getElementById('earthquakeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            let place = document.getElementById('place').value;
+            
+            // Example: Using a fixed API key for OpenWeatherMap (you should replace it with your key)
+            let apiKey = 'e3a90990b56034cdb755847b6439abae'; 
+            fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${place}&limit=1&appid=${apiKey}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data && data[0]) {
+                        const latitude = data[0].lat;
+                        const longitude = data[0].lon;
+                        
+                        // Fetch earthquake depth based on geolocation (this can be done similarly)
+                        fetch(`/predict`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                latitude: latitude,
+                                longitude: longitude,
+                                depth: 10 // Replace with actual depth data
+                            })
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            document.getElementById('prediction').textContent = `Predicted Magnitude: ${data.predicted_magnitude.toFixed(2)}`;
+                            document.getElementById('riskLevel').textContent = `Earthquake Risk: ${data.risk_level}`;
+                        });
+                    } else {
+                        alert("Location not found");
+                    }
+                });
+        });
+    </script>
+</body>
+</html>
