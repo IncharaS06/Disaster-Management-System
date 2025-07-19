@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Risk Alert</title>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: red;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🚨 Disaster Risk Alert</h1>
+        <h2>Get Alerts</h2>
+        <form id="alertForm">
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <input type="text" id="location" placeholder="Enter your city" required>
+            <button type="submit">Send Alert</button>
+        </form>
+        <p id="alertMessage"></p>
+    </div>
+
+    <script>
+        // ✅ Replace with your EmailJS Public Key
+        emailjs.init("yT95G3TrO3Rvj8vrl"); 
+
+        document.getElementById("alertForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById("email").value;
+            const city = document.getElementById("location").value;
+
+            if (!email || !city) {
+                document.getElementById("alertMessage").innerText = "❌ Please enter both email and city.";
+                return;
+            }
+
+            const apiKey = "e3a90990b56034cdb755847b6439abae"; // ✅ Replace with your OpenWeather API key
+            const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+            try {
+                const weatherResponse = await fetch(weatherUrl);
+                const weatherData = await weatherResponse.json();
+
+                if (!weatherResponse.ok) {
+                    throw new Error(weatherData.message || "Unable to fetch weather data.");
+                }
+
+                const weatherCondition = weatherData.weather[0].main; // e.g., Rain, Storm, Clear
+                const temperature = weatherData.main.temp;
+
+                let alertMessage = `Current weather in ${city}: ${weatherCondition}, Temperature: ${temperature}°C. `;
+                let sendAlert = false;
+
+                if (weatherCondition === "Thunderstorm" || weatherCondition === "Extreme" || temperature > 40) {
+                    sendAlert = true;
+                    alertMessage += "🚨 High disaster risk detected! Stay safe!";
+                } else {
+                    alertMessage += "✅ No immediate disaster risk detected.";
+                }
+
+                document.getElementById("alertMessage").innerText = alertMessage;
+
+                if (sendAlert) {
+                    sendEmailAlert(email, alertMessage);
+                }
+            } catch (error) {
+                console.error("Error fetching weather data:", error);
+                document.getElementById("alertMessage").innerText = "❌ Failed to fetch weather data. Try again.";
+            }
+        });
+
+        function sendEmailAlert(email, message) {
+            const templateParams = {
+                to_email: email,  
+                message: message  
+            };
+
+            // ✅ Replace with your correct EmailJS service and template ID
+            emailjs.send("Harsh@290304", "template_5g5j7he", templateParams)
+                .then(response => {
+                    console.log("✅ Email sent successfully:", response);
+                    document.getElementById("alertMessage").innerText = "✅ Alert email sent successfully!";
+                })
+                .catch(error => {
+                    console.error("❌ Error sending email:", error);
+                    document.getElementById("alertMessage").innerText = "❌ Failed to send email alert.";
+                });
+        }
+    </script>
+
+</body>
+</html>

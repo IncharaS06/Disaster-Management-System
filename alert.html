@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flood Alert System</title>
+    <link rel="stylesheet" href="alert.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🌊 Flood Alert System</h1>
+
+        <!-- ✅ Flood Alert Email Form -->
+        <h2>Get Flood Alerts</h2>
+        <form id="alertForm">
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <button type="submit">Send Alert</button>
+        </form>
+        <p id="alertMessage"></p>
+
+        <!-- ✅ Emergency Contacts -->
+        <h2>Emergency Contacts</h2>
+        <button onclick="getEmergencyContacts()">Show Nearby Shelters</button>
+        <ul id="contactList"></ul>
+    </div>
+
+    <!-- ✅ Load JavaScript Files -->
+    <script src="alert.js"></script>
+    <script src="server.js"></script>
+</body>
+</html>
